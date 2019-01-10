@@ -1,0 +1,69 @@
+<form [formGroupName]="fuelingForm">
+<div class="form_container">
+  <div class="form_header">
+    <div class="form_fuelingnumber">Fueling number</div>
+    <div class="form_cardicons">
+      <span>icon1</span>
+      <span>icon2</span>
+    </div>
+  </div>
+  <div class="form_body">
+    body
+    <div class="form_bodyitem">
+      <div class="form_bodytag">ID</div>
+      <div class="form_bodyval"></div>
+    </div>
+    <div class="form_bodyitem">
+      <div class="form_bodytag">Name</div>
+      <div class="form_bodyval"><input type="text" formControlName="name"></div>
+    </div>
+    <div class="form_bodyitem">
+      <div class="form_bodytag">Description</div>
+      <div class="form_bodyval"><input type="text" formControlName="descriptionr"></div>
+    </div>
+    <div class="form_bodyitem">
+      <div class="form_bodytag">Location (UTM)</div>
+      <div class="form_bodyval" formGroupName="location">
+        <div><input type="number" formControlName="location_zone">n</div>
+        <div><input type="number" formControlName="location_x"></div>
+        <div><input type="number" formControlName="location_y"></div>
+      </div>
+    </div>
+    <div class="form_bodyitem">
+      <div class="form_bodytag">Ellipse</div>
+      <div class="form_bodyval" formGroupName="ellipse">
+        <div><input type="number" formControlName="ellipse_width">m</div>
+        <div><input type="number" formControlName="ellipse_length">m</div>
+        <div><input type="number" formControlName="ellipse_azimuth">m</div>
+      </div>
+    </div>
+    <div class="form_bodyitem">
+      <div class="form_bodytag">Type</div>
+      <div class="form_bodyval"></div>
+    </div>
+    <div class="form_bodyitem">
+      <div class="form_bodytag">Classification</div>
+      <div class="form_bodyval"></div>
+    </div>
+    <div class="form_bodyitem">
+      <div class="form_bodytag">Activity</div>
+      <div class="form_bodyval"></div>
+    </div>
+    <div class="form_bodyitem">
+      <div class="form_bodytag">Certainty Level</div>
+      <div class="form_bodyval">
+        <select formControlName="certainty_level">
+          <option *ngFor="let certainty of $certaintyOptions" [ngValue]="cosher">
+            {{certainty.level}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="form_actions">
+      <div>Delete Entity</div>
+      <div>Cancel</div>
+      <div>Save</div>
+    </div>
+  </div>
+</div>
+</form>

@@ -1,0 +1,60 @@
+$font_size: 14px;
+$font_family: Roboto;
+$text_align: left;
+
+%form_tag {
+  font-size: $font_size;
+  line-height: 1.21;
+  font-family: $font_family;
+  text-align: left;
+  color: #656565;
+  width: 107px;
+}
+
+.form_container {
+  width: 365px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+}
+
+.form_header {
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+  display: flex;
+  flex-direction: row;
+
+}
+
+.form_fuelingnumber {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+
+.form_cardicons {
+
+}
+
+.form_body {
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+  display: flex;
+  flex-direction: column;
+}
+
+.form_bodytag {
+  @extend %form_tag;
+
+
+}
+
+.form_bodyitem {
+  display: flex;
+  flex-direction: row;
+}
+
+.form_actions {
+  display: flex;
+  flex-direction: row;
+}
+
