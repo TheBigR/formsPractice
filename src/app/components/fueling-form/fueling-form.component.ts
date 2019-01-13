@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
+
 @Component({
   selector: 'app-fueling-form',
   templateUrl: './fueling-form.component.html',
@@ -13,10 +14,12 @@ export class FuelingFormComponent implements OnInit {
   $activityOptions = ['Destroyed', 'Untouched', 'Partially destroyed'];
 
   $certaintyOptions = [{level: 'Low'}, {level: 'Medium'}, {level: 'High'}];
-  cosher;
 
+  $findingType = ['Command post', 'Vehicle', 'Weapon post'];
 
-  fuelingForm = this.fb.group({
+  cosher = ['Destroyed', 'Untouched', 'Partially destroyed'];
+
+   fuelingForm = this.fb.group({
     name: [''],
     description: [''],
     location: this.fb.group({
@@ -34,6 +37,13 @@ export class FuelingFormComponent implements OnInit {
     activity: [''],
     certainty_level: ['']
   });
+
+  makeEditable() {
+     const inputs = document.querySelectorAll('.form_input');
+     for (let i = 0; i < inputs.length; i++ ) {
+        inputs[i].setAttribute('class', 'form_input5');
+     }
+  }
 
 
   constructor( private fb: FormBuilder) { }

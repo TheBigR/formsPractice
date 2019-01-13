@@ -1,4 +1,5 @@
-<form [formGroupName]="fuelingForm">
+
+<form [formGroup]="fuelingForm">
 <div class="form_container">
   <div class="form_header">
     <div class="form_fuelingnumber">Fueling number</div>
@@ -15,44 +16,62 @@
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Name</div>
-      <div class="form_bodyval"><input type="text" formControlName="name"></div>
+      <div class="form_bodyval"><input type="text" formControlName="name" class="form_input"></div>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Description</div>
-      <div class="form_bodyval"><input type="text" formControlName="descriptionr"></div>
+      <div class="form_bodyval"><input type="text" formControlName="description" class="form_input"></div>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Location (UTM)</div>
       <div class="form_bodyval" formGroupName="location">
-        <div><input type="number" formControlName="location_zone">n</div>
-        <div><input type="number" formControlName="location_x"></div>
-        <div><input type="number" formControlName="location_y"></div>
+        <div><input type="text" formControlName="location_zone" class="form_input">n</div>
+        <div><input type="text" formControlName="location_x" class="form_input"></div>
+        <div><input type="text" formControlName="location_y" class="form_input"></div>
       </div>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Ellipse</div>
       <div class="form_bodyval" formGroupName="ellipse">
-        <div><input type="number" formControlName="ellipse_width">m</div>
-        <div><input type="number" formControlName="ellipse_length">m</div>
-        <div><input type="number" formControlName="ellipse_azimuth">m</div>
+        <div><input type="text" formControlName="ellipse_width"  class="form_input">m</div>
+        <div><input type="text" formControlName="ellipse_length" class="form_input">m</div>
+        <div><input type="text" formControlName="ellipse_azimuth" class="form_input">m</div>
       </div>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Type</div>
-      <div class="form_bodyval"></div>
+      <div class="form_bodyval">
+        <select formControlName="type" class="form_input form_ddown">
+          <option *ngFor="let type of $findingType" [ngValue]="cosher">
+            {{type}}
+          </option>
+        </select>
+      </div>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Classification</div>
-      <div class="form_bodyval"></div>
+      <div class="form_bodyval">
+        <select formControlName="classification" class="form_input form_ddown">
+          <option *ngFor="let classification of $classificationOptions" [ngValue]="cosher">
+            {{classification}}
+          </option>
+        </select>
+      </div>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Activity</div>
-      <div class="form_bodyval"></div>
+      <div class="form_bodyval">
+        <select formControlName="activity" class="form_input form_ddown">
+          <option *ngFor="let activity of $activityOptions" [ngValue]="cosher">
+            {{activity}}
+          </option>
+        </select>
+      </div>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Certainty Level</div>
       <div class="form_bodyval">
-        <select formControlName="certainty_level">
+        <select formControlName="certainty_level" class="form_input form_ddown">
           <option *ngFor="let certainty of $certaintyOptions" [ngValue]="cosher">
             {{certainty.level}}
           </option>
@@ -61,7 +80,8 @@
     </div>
     <div class="form_actions">
       <div>Delete Entity</div>
-      <div>Cancel</div>
+      <div><button type="button">Cancel</button></div>
+      <div><button type="button" (click)="makeEditable()">Edit</button></div>
       <div>Save</div>
     </div>
   </div>
