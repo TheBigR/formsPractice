@@ -32,8 +32,19 @@ $text_align: left;
   flex: 1;
 }
 
-.form_input5 {
+.form_readonly {
   border: none !important;
+  color: black;
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+.form_group {
+  display: flex;
+  flex-direction: row;
 }
 
 .form_ddown {
