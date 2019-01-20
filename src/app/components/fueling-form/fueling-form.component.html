@@ -8,10 +8,10 @@
       <span>icon2</span>
     </div>
   </div>
-  <div class="form_body">
+  <div class="form_body" *ngIf="selectedFueling">
     <div class="form_bodyitem">
       <div class="form_bodytag">ID</div>
-      <div class="form_bodyval"></div>
+      <div class="form_bodyval"  formGroupName="id" >{{selectedFueling.id}}</div>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Name</div>
@@ -41,7 +41,7 @@
       <div class="form_bodytag">Type</div>
       <div class="form_bodyval">
         <select formControlName="type" class="form_input form_ddown">
-          <option *ngFor="let type of $fuelingType" [ngValue]="cosher">
+          <option *ngFor="let type of $fuelingType" [ngValue]="type">
             {{type}}
           </option>
         </select>
@@ -51,7 +51,7 @@
       <div class="form_bodytag">Classification</div>
       <div class="form_bodyval">
         <select formControlName="classification" class="form_input form_ddown">
-          <option *ngFor="let classification of $classificationOptions" [ngValue]="cosher">
+          <option *ngFor="let classification of $classificationOptions" [ngValue]="classification">
             {{classification}}
           </option>
         </select>
@@ -61,7 +61,7 @@
       <div class="form_bodytag">Activity</div>
       <div class="form_bodyval">
         <select formControlName="activity" class="form_input form_ddown">
-          <option *ngFor="let activity of $activityOptions" [ngValue]="cosher">
+          <option *ngFor="let activity of $activityOptions" [ngValue]="activity">
             {{activity}}
           </option>
         </select>
@@ -71,19 +71,21 @@
       <div class="form_bodytag">Certainty Level</div>
       <div class="form_bodyval">
         <select formControlName="certainty_level" class="form_input form_ddown">
-          <option *ngFor="let certainty of $certaintyOptions" [ngValue]="cosher">
+          <option *ngFor="let certainty of $certaintyOptions" [ngValue]="certainty.level">
             {{certainty.level}}
           </option>
         </select>
       </div>
     </div>
-    <div class="form_actions">
-      <div>Delete Entity</div>
-      <div><button type="button">Cancel</button></div>
-      <div><button type="button" (click)="makeEditable()">Edit</button></div>
-      <div><button type="button" (click)="makeReadonly()">Readonly</button></div>
-      <div>Save</div>
-    </div>
+
+  </div>
+  <div class="form_actions">
+    <div>Delete Entity</div>
+    <div><button type="button" (click)="mockMe()">Load Mock</button></div>
+    <div><button type="button">Cancel</button></div>
+    <div><button type="button" (click)="makeEditable()">Edit</button></div>
+    <div><button type="button" (click)="makeReadonly()">Readonly</button></div>
+    <div>Save</div>
   </div>
 </div>
 </form>
