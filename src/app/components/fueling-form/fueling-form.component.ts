@@ -9,13 +9,13 @@ import { FormBuilder } from '@angular/forms';
 })
 export class FuelingFormComponent implements OnInit {
 
-  $classificationOptions = ['class1', 'class2', 'class3'];
+  $classificationOptions = ['Ten', 'Dor-Alon', 'Sonol'];
 
-  $activityOptions = ['Destroyed', 'Untouched', 'Partially destroyed'];
+  $activityOptions = ['Full', 'Half tank', 'Didnt work'];
 
   $certaintyOptions = [{level: 'Low'}, {level: 'Medium'}, {level: 'High'}];
 
-  $findingType = ['Command post', 'Vehicle', 'Weapon post'];
+  $fuelingType = ['Unleaded', 'Diesel', 'Lpg'];
 
   cosher = ['Destroyed', 'Untouched', 'Partially destroyed'];
 
