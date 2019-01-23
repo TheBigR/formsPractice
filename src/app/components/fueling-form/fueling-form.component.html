@@ -1,5 +1,5 @@
 
-<form [formGroup]="fuelingForm">
+<form [formGroup]="fuelingForm" >
 <div class="form_container">
   <div class="form_header">
     <div class="form_fuelingnumber">Fueling number</div>
@@ -15,7 +15,7 @@
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Name</div>
-      <div class="form_bodyval"><input type="text" formControlName="name" class="form_input"></div>
+      <div class="form_bodyval"><input type="text" id="crap" formControlName="name" class="form_input"></div>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Description</div>
@@ -33,7 +33,7 @@
       <div class="form_bodytag">Ellipse</div>
       <div class="form_bodyval form_group" formGroupName="ellipse">
         <div><input type="text" formControlName="ellipse_width"  class="form_input">m</div>
-        <div><input type="text" formControlName="ellipse_length" class="form_input">m</div>
+        <div><input type="text" id="jinji"  formControlName="ellipse_length" class="form_input">m</div>
         <div><input type="text" formControlName="ellipse_azimuth" class="form_input">m</div>
       </div>
     </div>
@@ -41,7 +41,7 @@
       <div class="form_bodytag">Type</div>
       <div class="form_bodyval">
         <select formControlName="type" class="form_input form_ddown">
-          <option *ngFor="let type of $fuelingType" [ngValue]="type">
+          <option *ngFor="let type of $fuelingType" [value]="type">
             {{type}}
           </option>
         </select>
@@ -51,7 +51,7 @@
       <div class="form_bodytag">Classification</div>
       <div class="form_bodyval">
         <select formControlName="classification" class="form_input form_ddown">
-          <option *ngFor="let classification of $classificationOptions" [ngValue]="classification">
+          <option *ngFor="let classification of $classificationOptions" [value]="classification">
             {{classification}}
           </option>
         </select>
@@ -61,7 +61,7 @@
       <div class="form_bodytag">Activity</div>
       <div class="form_bodyval">
         <select formControlName="activity" class="form_input form_ddown">
-          <option *ngFor="let activity of $activityOptions" [ngValue]="activity">
+          <option *ngFor="let activity of $activityOptions" [value]="activity">
             {{activity}}
           </option>
         </select>
@@ -71,7 +71,7 @@
       <div class="form_bodytag">Certainty Level</div>
       <div class="form_bodyval">
         <select formControlName="certainty_level" class="form_input form_ddown">
-          <option *ngFor="let certainty of $certaintyOptions" [ngValue]="certainty.level">
+          <option *ngFor="let certainty of $certaintyOptions" [value]="certainty.level">
             {{certainty.level}}
           </option>
         </select>
