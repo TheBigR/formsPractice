@@ -12,21 +12,18 @@ $text_align: left;
 }
 
 .form_container {
-  width: 365px;
+  width: 600px;
+  background-color: #656565;
+  color: whitesmoke;
   display: flex;
   flex-direction: column;
   position: relative;
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
 }
-
-#crap{
-
-}
 .form_header {
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
   display: flex;
   flex-direction: row;
-
 }
 
 .form_fuelingnumber {
@@ -37,8 +34,8 @@ $text_align: left;
 
 .form_readonly {
   border: none !important;
-  color: black;
-  background-color: white;
+  color: whitesmoke;
+  background-color: darkgray;
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
@@ -78,6 +75,8 @@ $text_align: left;
 
 .form_actions {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  justify-content: space-around;
 }
 

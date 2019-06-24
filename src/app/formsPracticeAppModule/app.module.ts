@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FuelingModuleModule } from './modules/fueling-module/fueling-module.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -8,7 +9,8 @@ import { FuelingModuleModule } from './modules/fueling-module/fueling-module.mod
 
   ],
   imports: [
-    FuelingModuleModule
+    FuelingModuleModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

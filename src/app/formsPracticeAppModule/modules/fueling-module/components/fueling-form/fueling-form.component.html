@@ -14,12 +14,13 @@
       <div class="form_bodyval"  formGroupName="id" >{{selectedFueling.id}}</div>
     </div>
     <div class="form_bodyitem">
-      <div class="form_bodytag">Name</div>
-      <div class="form_bodyval"><input type="text" id="crap" formControlName="name" class="form_input"></div>
+      <mat-form-field class="form_bodyval">
+        <input matInput placeholder="Name"  formControlName="name" >
+      </mat-form-field>
     </div>
     <div class="form_bodyitem">
-      <div class="form_bodytag">Description</div>
-      <div class="form_bodyval"><input type="text" formControlName="description" class="form_input"></div>
+
+      <mat-form-field class="form_bodyval"><input matInput type="text" placeholder="Description" formControlName="description" class="form_input"></mat-form-field>
     </div>
     <div class="form_bodyitem">
       <div class="form_bodytag">Location (UTM)</div>
@@ -80,12 +81,13 @@
 
   </div>
   <div class="form_actions">
-    <div>Delete Entity</div>
-    <div><button type="button" (click)="mockMe()">Load Mock</button></div>
-    <div><button type="button">Cancel</button></div>
-    <div><button type="button" (click)="makeEditable()">Edit</button></div>
-    <div><button type="button" (click)="makeReadonly()">Readonly</button></div>
-    <div>Save</div>
+    <div><button mat-raised-button (click)="mockMe()"> Load Mock </button></div>
+    <div><button mat-raised-button>Cancel</button></div>
+    <div><button mat-raised-button (click)="makeEditable()">Edit</button></div>
+    <div><button mat-raised-button (click)="makeReadonly()">Readonly</button></div>
+    <div><button mat-raised-button (click)="makeReadonly()">Delete Entity</button></div>
+    <div><button mat-raised-button (click)="makeReadonly()">Save</button></div>
   </div>
 </div>
 </form>
+
