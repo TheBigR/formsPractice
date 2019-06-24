@@ -4,6 +4,9 @@ import { FuelingFormComponent } from './components/fueling-form/fueling-form.com
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatInputModule } from '@angular/material';
+import { StoreModule } from '@ngrx/store';
+import { fuelingStoreKey } from './store/fueling.selector';
+import { fuelingReducer } from './store/fueling.reducer';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,8 @@ import { MatButtonModule, MatInputModule } from '@angular/material';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    StoreModule.forFeature(fuelingStoreKey, fuelingReducer)
   ],
   exports: [
     FuelingFormComponent

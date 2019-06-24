@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder} from '@angular/forms';
-import {Fueling} from './fueling.model';
+import {Fueling} from '../../store/fueling.model';
 import {FUELINGS} from './mock-fueling';
 
 

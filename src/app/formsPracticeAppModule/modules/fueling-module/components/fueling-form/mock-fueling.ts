@@ -1,4 +1,4 @@
-import {Fueling} from './fueling.model';
+import {Fueling} from '../../store/fueling.model';
 
 export const FUELINGS: Fueling[] = [
   {
