@@ -1,4 +1,5 @@
 import { VactionType } from '../../../../../shared/contracts/interfaces/Enums';
+import { Vendor } from './vendor.model';
 
 
 export class VAction {
@@ -7,5 +8,5 @@ export class VAction {
   type: VactionType;
   description: string;
   date: string;
-  vendor: string;
+  vendor: Vendor;
 }
