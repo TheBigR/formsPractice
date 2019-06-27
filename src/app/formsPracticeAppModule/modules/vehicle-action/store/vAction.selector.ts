@@ -1,6 +1,12 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector, MemoizedSelector } from '@ngrx/store';
 import { VAction } from './vAction.model';
+import { VActionInterface } from './vAction.interface';
 
-export const vactionsStoreKey = 'vactions';
-export const getVactionsState = createFeatureSelector<Map<string, VAction>>(vactionsStoreKey);
-export const getVactions = createSelector(getVactionsState, (state: Map<string, VAction>) => state);
+export const vactionsFeatureKey = 'vactions';
+export const vActionSelector: MemoizedSelector<any, VActionInterface> =
+  createFeatureSelector<VActionInterface>(vactionsFeatureKey);
+export const vActionsSelector =
+  createSelector(vActionSelector, ({vActions}: VActionInterface): Map<string, VAction> => vActions);
+export const editVactionSelector = createSelector(vActionSelector, ({editVaction}: VActionInterface): VAction => editVaction);
+// export const getVactionsState = createFeatureSelector<Map<string, VAction>>(vactionsFeatureKey);
+// export const getVactions = createSelector(getVactionsState, (state: Map<string, VAction>) => state);

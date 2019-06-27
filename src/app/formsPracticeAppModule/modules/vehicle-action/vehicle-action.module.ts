@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VActionComponent } from './components/v-action/v-action.component';
 import { StoreModule } from '@ngrx/store';
-import { vactionsStoreKey } from './store/vAction.selector';
+import { vactionsFeatureKey } from './store/vAction.selector';
 import { vActionReducer } from './store/vAction.reducer';
 import { vendorsStoreKey } from './store/vendor.selector';
 import { vendorReducer } from './store/vendor.reducer';
@@ -11,7 +11,7 @@ import { vendorReducer } from './store/vendor.reducer';
   declarations: [VActionComponent],
   imports: [
     CommonModule,
-    StoreModule.forFeature(vactionsStoreKey, vActionReducer),
+    StoreModule.forFeature(vactionsFeatureKey, vActionReducer),
     StoreModule.forFeature(vendorsStoreKey, vendorReducer),
   ]
 })

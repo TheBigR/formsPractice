@@ -1,24 +1,37 @@
-import { VAction } from './vAction.model';
-import { AddVaction, RemoveVaction, VActionActions, vActionActionTypes } from './vAction.actions';
+import { AddVaction, RemoveVaction, UpdateEditVaction, VActionActions, vActionActionTypes } from './vAction.actions';
+import { vActionInitState } from './vAction.initState';
+import { VActionInterface } from './vAction.interface';
 
 
-export const VactionState: Map<string, VAction> = new Map<string, VAction>([]);
-
-export function vActionReducer(state = VactionState, action: VActionActions): Map<string, VAction> {
+export function vActionReducer(state = vActionInitState, action: VActionActions): VActionInterface {
   switch (action.type) {
+    case vActionActionTypes.UPDATE_EDIT_VACTION: {
+      return {
+        ...state,
+        editVaction: {
+          ...state.editVaction,
+          ...(action as UpdateEditVaction).payload.vAction
+        }
+      };
+    }
     case vActionActionTypes.ADD_VACTION: {
       const currentVaction = (action as AddVaction).payload.vAction;
-      const currentAddVactionState = new Map(state);
-      currentAddVactionState.set(currentVaction._id, currentVaction);
+      const currentVactions = state.vActions.set(currentVaction._id, currentVaction);
       console.log('just added ' + currentVaction.name);
-      return currentAddVactionState;
+      return {
+        ...state,
+        vActions: currentVactions
+      };
     }
     case vActionActionTypes.REMOVE_VACTION: {
       const currentVaction = (action as RemoveVaction).payload.vAction;
-      const currentRemoveVactionState = new Map(state);
-      currentRemoveVactionState.delete(currentVaction._id);
+      state.vActions.delete(currentVaction._id);
+      const currentVactions = state.vActions;
       console.log('just removed ' + currentVaction.name);
-      return currentRemoveVactionState;
+      return {
+        ...state,
+        vActions: currentVactions
+      };
     }
     default:
       return state;
