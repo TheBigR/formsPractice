@@ -57,6 +57,10 @@ export class VActionComponent implements OnInit {
     this.vActionForm.reset();
   }
 
+  onClickCloseWindow() {
+
+  }
+
   ngOnInit() {
     this.subscriptions.push(
       this.editVaction$.subscribe()
