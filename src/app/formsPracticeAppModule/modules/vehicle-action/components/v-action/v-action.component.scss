@@ -1,0 +1,98 @@
+.vAction-form {
+  position: absolute;
+  right: 250px;
+  top: 130px;
+  color: #FFFFFF;
+  font-size: 14px;
+  width: 450px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.6);
+  border-radius: 8px 8px 8px 8px;
+  .vaction-header {
+    height: 61px;
+    line-height: 61px;
+    color: white;
+    background-color: #3A3A3A;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: grab;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+    .vaction-icons {
+      display: flex;
+      flex-direction: row;
+      height: 24px;
+      line-height: 24px;
+      .icon-image {
+        cursor: pointer;
+        margin-left: 10px;
+        padding: 4px;
+      }
+      .icon-image-active{
+        cursor: pointer;
+        margin-left: 10px;
+        padding: 4px;
+        background-color: rgba(0, 126, 255, 0.4);
+      }
+      .icon-image:hover {
+        background-color: #4a4b4c;
+      }
+    }
+  }
+  .vaction-body {
+    padding: 10px 20px;
+    height: auto;
+    font-size: 13px;
+    background-color: #4a4b4c;
+    border-radius: 0 0 8px 8px;
+    mat-form-field {
+      width: 150px;
+      margin-top: -13px;
+      margin-bottom: -15px;
+    }
+    .data-row {
+      margin-bottom: 15px;
+      .card-key {
+        color: #e6e6e6;
+      }
+      .location-annotations {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    .buttons-row {
+      padding-right: 20px;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .delete-form {
+        height: 40px;
+        line-height: 40px;
+        cursor: pointer;
+        color: #f35a48;
+      }
+      .action-links {
+        display: flex;
+        flex-direction: row;
+        width: 280px;
+        justify-content: space-between;
+        .disabled-button {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+      }
+      .action-links > div {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.opacity-key {
+  opacity: 0.6;
+  color: #e6e6e6;
+}

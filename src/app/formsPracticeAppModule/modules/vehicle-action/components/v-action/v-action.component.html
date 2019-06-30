@@ -3,10 +3,17 @@
     <div>Vaction</div>
     <div class="vaction-icons">
       <img (click)="toggleEditMode()" [ngClass]="isEditMode ? 'icon-image-active' : 'icon-image'"
-           src="assets/images/icons/edit.svg" width="24"
+           src="../../../../../../assets/images/icons/edit.svg" width="24"
            height="24"/>
-      <img (click)="onClickCloseWindow()" class="icon-image" src="../../assets/images/icons/X.svg" width="24"
+      <img (click)="onClickCloseWindow()" class="icon-image" src="../../../../../../assets/images/icons/X.svg" width="24"
            height="24"/>
+    </div>
+  </div>
+  <div class="vaction-body">
+    <div *ngIf="isEditMode">
+      <form name="vActionForm" [formGroup]="vActionForm" (ngSubmit)="vActionForm.valid && onSubmitForm()">
+
+      </form>
     </div>
   </div>
 </div>
