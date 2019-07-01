@@ -8,5 +8,4 @@ export const vActionSelector: MemoizedSelector<any, VActionInterface> =
 export const vActionsSelector =
   createSelector(vActionSelector, ({vActions}: VActionInterface): Map<string, VAction> => vActions);
 export const editVactionSelector = createSelector(vActionSelector, ({editVaction}: VActionInterface): VAction => editVaction);
-// export const getVactionsState = createFeatureSelector<Map<string, VAction>>(vactionsFeatureKey);
-// export const getVactions = createSelector(getVactionsState, (state: Map<string, VAction>) => state);
+
