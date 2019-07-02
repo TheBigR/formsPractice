@@ -10,6 +10,9 @@
     </div>
   </div>
   <div class="vaction-body">
+    <div *ngIf="!(isEditMode$ | async)">
+
+    </div>
     <div *ngIf="isEditMode">
       <form name="vActionForm" [formGroup]="vActionForm" (ngSubmit)="vActionForm.valid && onSubmitForm()">
 
