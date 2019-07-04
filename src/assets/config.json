@@ -1,5 +1,77 @@
 {
   "defaultData": {
-
+    "mapConfig": {
+      "isDisplayed": {
+        "acd": true,
+        "comint": true,
+        "elint": true,
+        "gmti": true,
+        "multi": true,
+        "site": true,
+        "target": true
+      },
+      "initView": {
+        "long": 10,
+        "lat": 50,
+        "height": 3000000
+      },
+      "eclipse_granularity": 0.01,
+      "viewerConfigurationOptions": {
+        "skyBox": false,
+        "skyAtmosphere": false,
+        "contextOptions": {
+          "webgl": {
+            "alpha": true
+          }
+        }
+      },
+      "mapProviders": [
+        {
+          "type": "offline",
+          "url": "assets/NaturalEarthll"
+        }
+      ]
+    },
+    "vactionConfig": {
+      "formValues": [
+        {
+          "fieldName": "_id",
+          "displayName": "Id",
+          "inputType": "none"
+        },
+        {
+          "fieldName": "name",
+          "displayName": "Name",
+          "inputType": "text"
+        },
+        {
+          "fieldName": "type",
+          "displayName": "Type",
+          "inputType": "select",
+          "selectOptions": [
+            "SERVICE",
+            "MOT INSPECTION",
+            "UPGRADE",
+            "INSURANCE",
+            "INCIDENT"
+          ]
+        },
+        {
+          "fieldName": "description",
+          "displayName": "Description",
+          "inputType": "text"
+        },
+        {
+          "fieldName": "date",
+          "displayName": "Date",
+          "inputType": "text"
+        },
+        {
+          "fieldName": "vendorName",
+          "displayName": "Vendor Name",
+          "inputType": "text"
+        }
+      ]
+    }
   }
 }
