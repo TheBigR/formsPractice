@@ -4,6 +4,7 @@ import { FuelingModuleModule } from './modules/fueling-module/fueling-module.mod
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { VehicleActionModule } from './modules/vehicle-action/vehicle-action.module';
+import { CoreModule } from './modules/core/core.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { VehicleActionModule } from './modules/vehicle-action/vehicle-action.mod
     FuelingModuleModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}),
-    VehicleActionModule
+    VehicleActionModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
