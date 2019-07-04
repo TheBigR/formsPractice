@@ -19,14 +19,20 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "../node_modules/cesium/Build/Cesium",
+                "output": "./assets/cesium"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "../node_modules/cesium/Build/Cesium/Widgets/widgets.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["../node_modules/cesium/Build/Cesium/Cesium.js"]
           },
           "configurations": {
             "production": {
