@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { editVactionSelector } from '../../store/vAction.selector';
+import { editVactionSelector, isVactionFormEditSelector } from '../../store/vAction.selector';
 import { distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
@@ -19,9 +19,9 @@ export class VActionComponent implements OnInit {
   subscriptions: Array<Subscription> = [];
   isEditMode = true;
   isEditMode$: Observable<boolean> = this.store.pipe(
-    select(editVactionSelector),
-    map(editVaction => editVaction),
-    tap(editVation => this.isEditMode = editVation)
+    select(isVactionFormEditSelector),
+    map(isVactionFormEdit => isVactionFormEdit),
+    tap(isVactionFormEdit => this.isEditMode = isVactionFormEdit)
   );
 
 
