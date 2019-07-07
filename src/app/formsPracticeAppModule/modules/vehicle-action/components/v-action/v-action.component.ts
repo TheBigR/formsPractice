@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { editVactionSelector } from '../../store/vAction.selector';
 import { distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { SubmitForm, UpdateEditVaction } from '../../store/vAction.actions';
+import { VACTION_CONFIG } from '../../config/vaction.config';
+import { VactionConfigInterface } from '../../interface/vaction.interface';
 
 @Component({
   selector: 'app-v-action',
@@ -16,10 +18,11 @@ export class VActionComponent implements OnInit {
   vActionForm;
   subscriptions: Array<Subscription> = [];
   isEditMode = true;
-  isEditMode$ = this.store.pipe(
+  isEditMode$: Observable<boolean> = this.store.pipe(
     select(editVactionSelector),
-    map(editVaction => editVaction.)
-  )
+    map(editVaction => editVaction),
+    tap(editVation => this.isEditMode = editVation)
+  );
 
 
   editVaction$ = this.store.pipe(
@@ -30,7 +33,7 @@ export class VActionComponent implements OnInit {
       .forEach(key => this.vActionForm.controls[key].setValue(vaction[key])))
   );
 
-  constructor(private store: Store<any>) { }
+  constructor(private store: Store<any>, @Inject(VACTION_CONFIG) public vactionConfig: VactionConfigInterface) { }
 
   setVactionForm() {
     this.vActionForm =  new FormGroup({
