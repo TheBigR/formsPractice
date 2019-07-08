@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { VehicleActionModule } from './modules/vehicle-action/vehicle-action.module';
 import { CoreModule } from './modules/core/core.module';
+import { MapModule } from './modules/map/map.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CoreModule } from './modules/core/core.module';
     BrowserAnimationsModule,
     StoreModule.forRoot({}),
     VehicleActionModule,
-    CoreModule
+    CoreModule,
+    MapModule
   ],
   providers: [],
   bootstrap: [AppComponent]
