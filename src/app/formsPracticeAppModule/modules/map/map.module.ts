@@ -9,6 +9,7 @@ import { MapProviderComponent } from './components/map-provider/map-provider.com
 import { MAP_CONFIG_PROVIDER, mapConfigFactory } from './config/map.config';
 import { FEConfigCoreService } from '../core/service/configCore.service';
 import { AngularCesiumModule } from 'angular-cesium';
+import { MapLayersProviders } from './services/map.layersProviders';
 
 @NgModule({
   declarations: [PolygonsDisplayComponent,
@@ -22,6 +23,7 @@ import { AngularCesiumModule } from 'angular-cesium';
     AngularCesiumModule
   ],
   providers: [
+    MapLayersProviders,
     {provide: 'mapConfig-key', useValue: 'mapConfig'},
     {
       provide: MAP_CONFIG_PROVIDER,
