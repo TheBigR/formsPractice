@@ -8,7 +8,7 @@ import { MapComponent } from './components/map/map.component';
 import { MapProviderComponent } from './components/map-provider/map-provider.component';
 import { MAP_CONFIG_PROVIDER, mapConfigFactory } from './config/map.config';
 import { FEConfigCoreService } from '../core/service/configCore.service';
-import { AngularCesiumModule } from 'angular-cesium';
+import {AngularCesiumModule, AngularCesiumWidgetsModule} from 'angular-cesium';
 import { MapLayersProviders } from './services/map.layersProviders';
 
 @NgModule({
@@ -20,7 +20,8 @@ import { MapLayersProviders } from './services/map.layersProviders';
                  MapProviderComponent],
   imports: [
     CommonModule,
-    AngularCesiumModule
+    AngularCesiumModule,
+    AngularCesiumWidgetsModule
   ],
   providers: [
     MapLayersProviders,
